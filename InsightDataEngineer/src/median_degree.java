@@ -18,8 +18,8 @@ public class median_degree {
 	
 	public static void main(String[] args) throws IOException, JSONException {
 
-		Reader reader = new FileReader("insight_testsuite/tests/test-1-venmo-trans/venmo_input/venmo-trans.txt");
-		Writer writer = new FileWriter("insight_testsuite/tests/test-1-venmo-trans/venmo_output/output.txt");
+		Reader reader = new FileReader("./venmo_input/venmo-trans.txt");
+		Writer writer = new FileWriter("./venmo_output/output.txt");
 
 		BufferedReader br = new BufferedReader(reader);
 		bw = new BufferedWriter(writer);
@@ -122,7 +122,7 @@ public class median_degree {
 			med_val=(double)(median.get(middle-1)+median.get(middle))/2;
 
 		
-		//System.out.println(	new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR));	
+		System.out.println(	new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR));	
 		bw.write((new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR)).toString() + "\n");
 		//System.out.println("---");
 	}
