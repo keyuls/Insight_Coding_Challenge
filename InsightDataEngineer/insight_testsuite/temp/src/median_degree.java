@@ -4,8 +4,9 @@ import java.math.BigDecimal;
 import java.security.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
-import org.json.*;
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 public class median_degree {
 
@@ -13,13 +14,12 @@ public class median_degree {
 	static Date max_span=null;
 	static Map<edge,Date> liveEdges= new HashMap<edge,Date>();
 	static Map<String,Integer> userConnect= new HashMap<String,Integer>();
-	 static BufferedWriter bw; 
+	static BufferedWriter bw; 
 	
 	public static void main(String[] args) throws IOException, JSONException {
 
-		
 		Reader reader = new FileReader("insight_testsuite/tests/test-1-venmo-trans/venmo_input/venmo-trans.txt");
-		Writer writer = new FileWriter("insight_testsuite/tests/test-1-venmo-trans/venmo_output/output.txt",true);
+		Writer writer = new FileWriter("insight_testsuite/tests/test-1-venmo-trans/venmo_output/output.txt");
 
 		BufferedReader br = new BufferedReader(reader);
 		bw = new BufferedWriter(writer);
@@ -122,7 +122,7 @@ public class median_degree {
 			med_val=(double)(median.get(middle-1)+median.get(middle))/2;
 
 		
-		System.out.println(	new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR));	
+		//System.out.println(	new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR));	
 		bw.write((new BigDecimal(med_val).setScale(2,BigDecimal.ROUND_FLOOR)).toString() + "\n");
 		//System.out.println("---");
 	}
