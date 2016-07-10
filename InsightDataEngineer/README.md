@@ -13,7 +13,9 @@
 - removeOld() - It iterates through liveEdges and remove all edges those have timestamp less than current sixty second window and update graph.
 
 - updateCount() - It increments total numbers of connected edges for given node.
-- deleteCount() - It decrements total numbers of connected edges for given node while removing edges from liveEdges. If node becomes disconnected then also removes node from userConnect. 
+
+- deleteCount() - It decrements total numbers of connected edges for given node while removing edges from liveEdges. If node becomes disconnected then also removes node from userConnect.
+ 
 - getMedian() - After updating recent graph, it will retrive total number of connected edges for each node and calculate median of graph and  write into output file.
 
 ### Dependency
