@@ -53,14 +53,12 @@ public class median_degree {
 				updateCount(actor);
 				updateCount(target);
 				removeOld(max_span);
-
 			}
 			else if((currentTime.compareTo(max_span)<=0)  && ((max_span.getTime() - currentTime.getTime()) / 1000) < 60){	
 				edge e=new edge(actor, target);
 				liveEdges.put(e, currentTime);
 				updateCount(actor);
 				updateCount(target);
-
 			}
 			getMedian();	
 		}		
